@@ -1,5 +1,6 @@
 import telefone.Contato;
 import telefone.Contatos;
+import telefone.Ligacao;
 import telefone.Telefone;
 
 public class App {
@@ -8,7 +9,7 @@ public class App {
         Contato contatoA = new Contato("Lucas", "40897456");
         Contato contatoB = new Contato("Luan", "12345678");
         Contato contatoC = new Contato("Maria", "78945612");
-        Contato contatoD = new Contato("Lorraine", "78945612");
+        Contato contatoD = new Contato("Lorraine", "78945615");
 
         Contatos telefoneContatos = telefone.getContatos();
         telefoneContatos.adicionar(contatoA);
@@ -19,5 +20,10 @@ public class App {
 
         System.out.println("Contatos filtrados:");
         System.out.println(telefoneContatos.buscar("l"));
+
+        telefone.ligar(contatoA);
+        telefone.ligar(contatoB);
+        telefone.ligar(contatoC);
+        System.out.println(telefone.getChamadas()); 
     }
 }
